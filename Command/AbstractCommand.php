@@ -323,9 +323,9 @@ abstract class AbstractCommand extends ContainerAwareCommand
             if (iterator_count($schemas)) {
                 foreach ($schemas as $schema) {
                     $logicalName = $this->transformToLogicalName($schema, $bundle);
-                    $finalSchema = new \SplFileInfo($this->getFileLocator()->locate($logicalName));
+                    //$finalSchema = new \SplFileInfo($this->getFileLocator()->locate($logicalName));
 
-                    $finalSchemas[(string) $finalSchema] = array($bundle, $finalSchema);
+                    $finalSchemas[(string) $logicalName] = array($bundle, $schema);
                 }
             }
         }

@@ -17,6 +17,8 @@
     </parameters>
 
     <services>
+        <defaults public="true"/>
+
         <service id="propel.configuration" class="%propel.configuration.class%" />
 
         <service id="propel.build_properties" class="%propel.build_properties.class%" />
@@ -35,6 +37,22 @@
 
         <service id="propel.form.type.model" class="%propel.form.type.model.class%">
             <tag name="form.type" alias="model" />
+        </service>
+
+        <service id="Propel\Bundle\PropelBundle\Command\MigrationGenerateDiffCommand">
+            <tag name="console.command" />
+        </service>
+
+        <service id="Propel\Bundle\PropelBundle\Command\BuildCommand">
+            <tag name="console.command" />
+        </service>
+
+        <service id="Propel\Bundle\PropelBundle\Command\MigrationMigrateCommand">
+            <tag name="console.command" />
+        </service>
+
+        <service id="Propel\Bundle\PropelBundle\Command\ModelBuildCommand">
+            <tag name="console.command" />
         </service>
 
         <service id="propel.twig.extension.syntax" class="%propel.twig.extension.syntax.class%">
